@@ -104,7 +104,7 @@ export const WETH: WETHTokens = {
   ),
   [ChainId.HECO_TESTNET]: new Token(
     ChainId.HECO_TESTNET,
-    '0x46692ca58F60Dc94b42F5fF34a2108950057C0cF',
+    '0xce2c83ef3a1ecedf55d9db52c2e920702aeb4a83',
     18,
     'WHT',
     'Wrapped HT'
