@@ -1,8 +1,8 @@
 {
   "name": "@zhiyuan2007/uniscam-sdk",
   "license": "MIT",
-  "version": "3.0.30-test.5",
-  "description": "🛠 An SDK for building applications on top of Uniswap.",
+  "version": "3.0.30-test.6",
+  "description": "🛠 An SDK for building applications on top of Uniswap, using unisave code.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
