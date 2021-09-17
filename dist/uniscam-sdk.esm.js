@@ -43,8 +43,8 @@ var Rounding;
   Rounding[Rounding["ROUND_UP"] = 2] = "ROUND_UP";
 })(Rounding || (Rounding = {}));
 
-var FACTORY_ADDRESS = '0xf210b78636ba74f21eb859b2d0601087814bc151';
-var INIT_CODE_HASH_BSC = '0x3fcf43bd51e48d195931618953d09689ad8616542514793d4e8991fb7603da41';
+var FACTORY_ADDRESS = '0x10b2418a9Aa7fE69a032DDbB3Ed04e935Ed37Cbb';
+var INIT_CODE_HASH_BSC = '0x97ae6e26fac244d3e6b32c65b24129913d19f8ed2853333046b9f3a55ac7dec1';
 var INIT_CODE_HASH_ETH = '0xf72b1bfa0de188ad1a4b71bb308a2c57e71c358a10cbbac6e7a820f3e4ba004d';
 var INIT_CODE_HASH_HECO = '0x0fa78881436cb121aa18ae75c7bd50d9e517bb3f3cf4aa724fc948791f45b56e';
 var INIT_CODE_HASH_MATIC = '0xf72b1bfa0de188ad1a4b71bb308a2c57e71c358a10cbbac6e7a820f3e4ba004d';
@@ -395,7 +395,7 @@ var Currency = /*#__PURE__*/function () {
 Currency.ETHER = /*#__PURE__*/new Currency(18, '(Currency)', 'Currency');
 var ETHER = Currency.ETHER;
 
-var _WETH, _USDT, _BUSD;
+var _WETH, _USDT, _PUSD, _BUSD;
 /**
  * Represents an ERC20 token with a unique address and some metadata.
  */
@@ -436,6 +436,8 @@ var Token = /*#__PURE__*/function (_Currency) {
   ;
 
   _proto.sortsBefore = function sortsBefore(other) {
+    console.log("sortsBefore");
+    console.log(other);
     !(this.chainId === other.chainId) ? process.env.NODE_ENV !== "production" ? invariant(false, 'CHAIN_IDS') : invariant(false) : void 0;
     !(this.address !== other.address) ? process.env.NODE_ENV !== "production" ? invariant(false, 'ADDRESSES') : invariant(false) : void 0;
     return this.address.toLowerCase() < other.address.toLowerCase();
@@ -458,8 +460,9 @@ function currencyEquals(currencyA, currencyB) {
     return currencyA === currencyB;
   }
 }
-var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.ROPSTEN] = /*#__PURE__*/new Token(ChainId.ROPSTEN, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.RINKEBY] = /*#__PURE__*/new Token(ChainId.RINKEBY, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.GÖRLI] = /*#__PURE__*/new Token(ChainId.GÖRLI, '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.KOVAN] = /*#__PURE__*/new Token(ChainId.KOVAN, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.BSC_MAINNET] = /*#__PURE__*/new Token(ChainId.BSC_MAINNET, '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c', 18, 'WBNB', 'Wrapped BNB'), _WETH[ChainId.BSC_TESTNET] = /*#__PURE__*/new Token(ChainId.BSC_TESTNET, '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd', 18, 'WBNB', 'Wrapped BNB'), _WETH[ChainId.HECO_MAINNET] = /*#__PURE__*/new Token(ChainId.HECO_MAINNET, '0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F', 18, 'WHT', 'Wrapped HT'), _WETH[ChainId.HECO_TESTNET] = /*#__PURE__*/new Token(ChainId.HECO_TESTNET, '0xce2c83ef3a1ecedf55d9db52c2e920702aeb4a83', 18, 'WHT', 'Wrapped HT'), _WETH[ChainId.MATIC_MAINNET] = /*#__PURE__*/new Token(ChainId.MATIC_MAINNET, '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270', 18, 'WMATIC', 'Wrapped MATIC'), _WETH);
-var USDT = (_USDT = {}, _USDT[ChainId.MAINNET] = '', _USDT[ChainId.ROPSTEN] = '', _USDT[ChainId.RINKEBY] = '', _USDT[ChainId.GÖRLI] = '', _USDT[ChainId.KOVAN] = '', _USDT[ChainId.BSC_MAINNET] = '0x55d398326f99059fF775485246999027B3197955', _USDT[ChainId.BSC_TESTNET] = '0x337610d27c682E347C9cD60BD4b3b107C9d34dDd', _USDT[ChainId.HECO_MAINNET] = '', _USDT[ChainId.HECO_TESTNET] = '', _USDT[ChainId.MATIC_MAINNET] = '', _USDT);
+var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.ROPSTEN] = /*#__PURE__*/new Token(ChainId.ROPSTEN, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.RINKEBY] = /*#__PURE__*/new Token(ChainId.RINKEBY, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.GÖRLI] = /*#__PURE__*/new Token(ChainId.GÖRLI, '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.KOVAN] = /*#__PURE__*/new Token(ChainId.KOVAN, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.BSC_MAINNET] = /*#__PURE__*/new Token(ChainId.BSC_MAINNET, '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c', 18, 'WBNB', 'Wrapped BNB'), _WETH[ChainId.BSC_TESTNET] = /*#__PURE__*/new Token(ChainId.BSC_TESTNET, '0xae13d989dac2f0debff460ac112a837c89baa7cd', 18, 'WBNB', 'Wrapped BNB'), _WETH[ChainId.HECO_MAINNET] = /*#__PURE__*/new Token(ChainId.HECO_MAINNET, '0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F', 18, 'WHT', 'Wrapped HT'), _WETH[ChainId.HECO_TESTNET] = /*#__PURE__*/new Token(ChainId.HECO_TESTNET, '0xce2c83ef3a1ecedf55d9db52c2e920702aeb4a83', 18, 'WHT', 'Wrapped HT'), _WETH[ChainId.MATIC_MAINNET] = /*#__PURE__*/new Token(ChainId.MATIC_MAINNET, '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270', 18, 'WMATIC', 'Wrapped MATIC'), _WETH);
+var USDT = (_USDT = {}, _USDT[ChainId.MAINNET] = '', _USDT[ChainId.ROPSTEN] = '', _USDT[ChainId.RINKEBY] = '', _USDT[ChainId.GÖRLI] = '', _USDT[ChainId.KOVAN] = '', _USDT[ChainId.BSC_MAINNET] = '0x55d398326f99059fF775485246999027B3197955', _USDT[ChainId.BSC_TESTNET] = '0x337610d27c682e347c9cd60bd4b3b107c9d34ddd', _USDT[ChainId.HECO_MAINNET] = '', _USDT[ChainId.HECO_TESTNET] = '', _USDT[ChainId.MATIC_MAINNET] = '', _USDT);
+var PUSD = (_PUSD = {}, _PUSD[ChainId.MAINNET] = '', _PUSD[ChainId.ROPSTEN] = '', _PUSD[ChainId.RINKEBY] = '', _PUSD[ChainId.GÖRLI] = '', _PUSD[ChainId.KOVAN] = '', _PUSD[ChainId.BSC_MAINNET] = '0x55d398326f99059fF775485246999027B3197955', _PUSD[ChainId.BSC_TESTNET] = '0x6176123BFB52041bC3e1Bc0Ec3beb9f15fDF1025', _PUSD[ChainId.HECO_MAINNET] = '', _PUSD[ChainId.HECO_TESTNET] = '', _PUSD[ChainId.MATIC_MAINNET] = '', _PUSD);
 var BUSD = (_BUSD = {}, _BUSD[ChainId.MAINNET] = '', _BUSD[ChainId.ROPSTEN] = '', _BUSD[ChainId.RINKEBY] = '', _BUSD[ChainId.GÖRLI] = '', _BUSD[ChainId.KOVAN] = '', _BUSD[ChainId.BSC_MAINNET] = '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', _BUSD[ChainId.BSC_TESTNET] = '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee', _BUSD[ChainId.HECO_MAINNET] = '', _BUSD[ChainId.HECO_TESTNET] = '', _BUSD[ChainId.MATIC_MAINNET] = '', _BUSD);
 
 var _toSignificantRoundin, _toFixedRounding;
@@ -1601,5 +1604,5 @@ var Fetcher = /*#__PURE__*/function () {
   return Fetcher;
 }();
 
-export { BUSD, ChainId, Currency, CurrencyAmount, ETHER, FACTORY_ADDRESS, Fetcher, Fraction, INIT_CODE_HASH_BSC as INIT_CODE_HASH, InsufficientInputAmountError, InsufficientReservesError, MINIMUM_LIQUIDITY, Pair, Percent, Price, Rounding, Route, Router, Token, TokenAmount, Trade, TradeType, USDT, WETH, currencyEquals, inputOutputComparator, tradeComparator };
+export { BUSD, ChainId, Currency, CurrencyAmount, ETHER, FACTORY_ADDRESS, Fetcher, Fraction, INIT_CODE_HASH_BSC as INIT_CODE_HASH, InsufficientInputAmountError, InsufficientReservesError, MINIMUM_LIQUIDITY, PUSD, Pair, Percent, Price, Rounding, Route, Router, Token, TokenAmount, Trade, TradeType, USDT, WETH, currencyEquals, inputOutputComparator, tradeComparator };
 //# sourceMappingURL=uniscam-sdk.esm.js.map

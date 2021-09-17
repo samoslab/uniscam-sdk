@@ -35,6 +35,9 @@ export class Token extends Currency {
    * @throws if the tokens are on different chains
    */
   public sortsBefore(other: Token): boolean {
+    console.log("sortsBefore");
+    console.log(other);
+
     invariant(this.chainId === other.chainId, 'CHAIN_IDS')
     invariant(this.address !== other.address, 'ADDRESSES')
     return this.address.toLowerCase() < other.address.toLowerCase()
@@ -88,13 +91,23 @@ export const WETH: WETHTokens = {
     'WBNB',
     'Wrapped BNB'
   ),
+  // [ChainId.BSC_TESTNET]: new Token(
+  //   ChainId.BSC_TESTNET,
+  //   '0x1dd31cde538346de8fdacdc28177488e0daa9c65',
+  //   18,
+  //   'WBNB',
+  //   'Wrapped BNB'
+  // ),
+
   [ChainId.BSC_TESTNET]: new Token(
     ChainId.BSC_TESTNET,
-    '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
+    '0xae13d989dac2f0debff460ac112a837c89baa7cd',
     18,
     'WBNB',
     'Wrapped BNB'
   ),
+
+
   [ChainId.HECO_MAINNET]: new Token(
     ChainId.HECO_MAINNET,
     '0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F',
@@ -126,11 +139,24 @@ export const USDT: Tokens = {
   [ChainId.GÖRLI]: '',
   [ChainId.KOVAN]: '',
   [ChainId.BSC_MAINNET]: '0x55d398326f99059fF775485246999027B3197955',
-  [ChainId.BSC_TESTNET]: '0x337610d27c682E347C9cD60BD4b3b107C9d34dDd',
+  [ChainId.BSC_TESTNET]: '0x337610d27c682e347c9cd60bd4b3b107c9d34ddd',
   [ChainId.HECO_MAINNET]: '',
   [ChainId.HECO_TESTNET]: '',
   [ChainId.MATIC_MAINNET]: ''
 }
+export const PUSD: Tokens = {
+  [ChainId.MAINNET]: '',
+  [ChainId.ROPSTEN]: '',
+  [ChainId.RINKEBY]: '',
+  [ChainId.GÖRLI]: '',
+  [ChainId.KOVAN]: '',
+  [ChainId.BSC_MAINNET]: '0x55d398326f99059fF775485246999027B3197955',
+  [ChainId.BSC_TESTNET]: '0x6176123BFB52041bC3e1Bc0Ec3beb9f15fDF1025',
+  [ChainId.HECO_MAINNET]: '',
+  [ChainId.HECO_TESTNET]: '',
+  [ChainId.MATIC_MAINNET]: ''
+}
+
 export const BUSD: Tokens = {
   [ChainId.MAINNET]: '',
   [ChainId.ROPSTEN]: '',

@@ -32,5 +32,6 @@ declare type Tokens = {
     [chainId in ChainId]: string;
 };
 export declare const USDT: Tokens;
+export declare const PUSD: Tokens;
 export declare const BUSD: Tokens;
 export {};
