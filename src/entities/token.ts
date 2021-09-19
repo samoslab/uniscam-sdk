@@ -107,6 +107,15 @@ export const WETH: WETHTokens = {
     'Wrapped BNB'
   ),
 
+  [ChainId.BSC_TESTNET]: new Token(
+    ChainId.BSC_TESTNET,
+    '0xae13d989dac2f0debff460ac112a837c89baa7cd',
+    18,
+    'WBNB',
+    'Wrapped BNB'
+  ),
+
+
 
   [ChainId.HECO_MAINNET]: new Token(
     ChainId.HECO_MAINNET,
