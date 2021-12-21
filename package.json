@@ -1,7 +1,7 @@
 {
   "name": "@samoslab/uniscam-sdk",
   "license": "MIT",
-  "version": "3.0.30-fishtest.19",
+  "version": "3.0.30-panegg.19",
   "description": "🛠 An SDK for building applications on top of Uniswap, using like mdx code.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
